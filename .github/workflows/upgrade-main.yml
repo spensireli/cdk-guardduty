@@ -4,7 +4,7 @@ name: upgrade-main
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 17 * * 0
 jobs:
   upgrade:
     name: Upgrade
@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 18.20.4
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Upgrade dependencies
@@ -79,6 +79,7 @@ jobs:
             *Automatically created by projen via the "upgrade-main" workflow*
           branch: github-actions/upgrade-main
           title: "chore(deps): upgrade dependencies"
+          labels: auto-approve,auto-merge
           body: |-
             Upgrades project dependencies. See details in [workflow run].
 

@@ -1,8 +1,9 @@
 {
-  "name": "cdk-guardduty",
+  "name": "@spensireli/cdk-guardduty",
+  "description": "Enables AWS GuardDuty with all features.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:spensireli/cdk-guardduty.git"
+    "url": "https://github.com/spensireli/cdk-guardduty.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -17,6 +18,7 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -69,6 +71,9 @@
     "guardduty",
     "security"
   ],
+  "engines": {
+    "node": ">= 18.0.0"
+  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -124,7 +129,12 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "spensireli.aws-cdk-guardduty",
+        "module": "spensireli.aws_cdk_guardduty"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
