@@ -29,8 +29,8 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "user",
-    "email": "user@domain.com",
+    "name": "spensireli",
+    "email": "5614310+spensireli@users.noreply.github.com",
     "organization": false
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^7",
     "@typescript-eslint/parser": "^7",
-    "aws-cdk-lib": "2.1.0",
+    "aws-cdk-lib": "2.158.0",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -57,11 +57,17 @@
     "typescript": "^5.5.3"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.158.0",
     "constructs": "^10.0.5"
   },
   "keywords": [
-    "cdk"
+    "aws",
+    "aws-cdk",
+    "cdk",
+    "duty",
+    "guard",
+    "guardduty",
+    "security"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",

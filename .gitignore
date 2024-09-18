@@ -23,13 +23,15 @@ coverage
 *.lcov
 .nyc_output
 build/Release
-node_modules/
 jspm_packages/
 *.tsbuildinfo
 .eslintcache
 *.tgz
 .yarn-integrity
 .cache
+node_modules/
+.DS_Store
+.vscode
 /test-reports/
 junit.xml
 /coverage/
