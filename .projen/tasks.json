@@ -125,6 +125,9 @@
     "eslint": {
       "name": "eslint",
       "description": "Runs eslint against the codebase",
+      "env": {
+        "ESLINT_USE_FLAT_CONFIG": "false"
+      },
       "steps": [
         {
           "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
@@ -137,7 +140,7 @@
       "description": "Install project dependencies and update lockfile (non-frozen)",
       "steps": [
         {
-          "exec": "yarn install --check-files"
+          "exec": "npm install"
         }
       ]
     },
@@ -146,7 +149,23 @@
       "description": "Install project dependencies using frozen lockfile",
       "steps": [
         {
-          "exec": "yarn install --check-files --frozen-lockfile"
+          "exec": "npm ci"
+        }
+      ]
+    },
+    "major": {
+      "name": "major",
+      "steps": [
+        {
+          "exec": "npm version major"
+        }
+      ]
+    },
+    "minor": {
+      "name": "minor",
+      "steps": [
+        {
+          "exec": "npm version minor"
         }
       ]
     },
@@ -191,6 +210,14 @@
       "steps": [
         {
           "exec": "jsii-pacmak -v --target python"
+        }
+      ]
+    },
+    "patch": {
+      "name": "patch",
+      "steps": [
+        {
+          "exec": "npm version patch"
         }
       ]
     },

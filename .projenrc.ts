@@ -2,9 +2,8 @@ import { awscdk, javascript } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'spensireli',
   authorAddress: '5614310+spensireli@users.noreply.github.com',
-  cdkVersion: '2.158.0',
+  cdkVersion: '2.198.0',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.4.0',
   name: '@spensireli/cdk-guardduty',
   description: 'Enables AWS GuardDuty with all features.',
   projenrcTs: true,
@@ -14,15 +13,25 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/spensireli/cdk-guardduty.git',
   keywords: ['aws', 'cdk', 'aws-cdk', 'guardduty', 'guard', 'duty', 'security'],
   releaseToNpm: true,
+  packageManager: javascript.NodePackageManager.NPM,
   npmAccess: javascript.NpmAccess.PUBLIC,
-  minNodeVersion: '18.0.0',
-  workflowNodeVersion: '18.20.4',
+  minNodeVersion: '22.0.0',
+  workflowNodeVersion: '22.0.0',
   depsUpgradeOptions: {
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
-      schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 17 * * 0']), // every sunday (JST/MON:02:00)
+      schedule: javascript.UpgradeDependenciesSchedule.expressions(['0 17 * * 0']),
     },
   },
+  deps: [
+    'aws-cdk-lib',
+    'constructs',
+  ],
+  devDeps: [
+    'esbuild',
+    'typescript',
+    'ts-jest',
+  ],
   autoApproveOptions: {
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['spensireli'],
@@ -36,5 +45,16 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '.DS_Store',
     '.vscode',
   ],
+});
+project.addTask('minor', {
+  exec: 'npm version minor',
+});
+
+project.addTask('major', {
+  exec: 'npm version major',
+});
+
+project.addTask('patch', {
+  exec: 'npm version patch',
 });
 project.synth();
