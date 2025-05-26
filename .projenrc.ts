@@ -3,6 +3,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'spensireli',
   authorAddress: '5614310+spensireli@users.noreply.github.com',
   cdkVersion: '2.198.0',
+  release: true,
+  github: false,
   defaultReleaseBranch: 'main',
   name: '@spensireli/cdk-guardduty',
   description: 'Enables AWS GuardDuty with all features.',
@@ -46,6 +48,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '.vscode',
   ],
 });
+
 project.addTask('minor', {
   exec: 'npm version minor',
 });

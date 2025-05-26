@@ -3,8 +3,6 @@
 !/.projen/tasks.json
 !/.projen/deps.json
 !/.projen/files.json
-!/.github/workflows/pull-request-lint.yml
-!/.github/workflows/auto-approve.yml
 !/package.json
 !/LICENSE
 !/.npmignore
@@ -36,13 +34,8 @@ node_modules/
 /test-reports/
 junit.xml
 /coverage/
-!/.github/workflows/build.yml
 /dist/changelog.md
 /dist/version.txt
-!/.github/workflows/release.yml
-!/.mergify.yml
-!/.github/dependabot.yml
-!/.github/pull_request_template.md
 !/test/
 !/tsconfig.dev.json
 !/src/
