@@ -1,4 +1,5 @@
 # cdk-guardduty
+[![codecov](https://codecov.io/gh/spensireli/cdk-guardduty/graph/badge.svg?token=YVFUKBJE93)](https://codecov.io/gh/spensireli/cdk-guardduty)
 
 Enables GuardDuty and allows for enabling of all or some features.
 

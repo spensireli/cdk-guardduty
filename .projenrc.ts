@@ -42,6 +42,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: 'spensireli.aws-cdk-guardduty',
     module: 'spensireli.aws_cdk_guardduty',
   },
+  jestOptions: {
+    coverage: true,
+  },
   gitignore: [
     'node_modules/',
     '.DS_Store',
